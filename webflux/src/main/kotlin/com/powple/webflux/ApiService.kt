@@ -4,14 +4,19 @@ import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.bodyToMono
 import reactor.core.publisher.Mono
 
-class ApiService(webClientBuilder: WebClient.Builder) {
+interface ApiService {
+    fun hello(name: String): Mono<String>
+    fun status(app: String): Mono<String>
+}
+
+class ApiServiceImpl(webClientBuilder: WebClient.Builder): ApiService {
 
     private val client = webClientBuilder.build()
 
-    fun hello(name: String) =
+    override fun hello(name: String) =
         Mono.just("Hello $name!")
 
-    fun status(app: String) =
+    override fun status(app: String) =
         client.get()
             .uri("http://$app/actuator/health")
             .retrieve()

@@ -3,7 +3,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude("junit", "junit")
 	}
@@ -12,4 +12,5 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter-engine")
 	testImplementation("com.squareup.okhttp3:mockwebserver:3.14.2")
 	testImplementation("com.github.tomakehurst:wiremock-jre8:2.23.2")
+	testImplementation("com.ninja-squad:springmockk:1.1.2")
 }

@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient
 @SpringBootApplication
 class SpringBootReactiveWebExampleApplication {
 	@Bean
-	fun apiService(wcBuilder: WebClient.Builder) = ApiService(wcBuilder)
+	fun apiService(wcBuilder: WebClient.Builder) = ApiServiceImpl(wcBuilder)
 }
 
 fun main(args: Array<String>) {
